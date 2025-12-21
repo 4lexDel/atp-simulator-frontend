@@ -24,7 +24,7 @@ export default function Register() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Inscription</h1>
+      <h1>Nouveau joueur</h1>
 
       <input
         value={name}
@@ -44,7 +44,7 @@ export default function Register() {
       <button type="submit">Créer un compte</button>
 
       <p>
-        Déjà un compte ?{" "}
+        Déjà un joueur ?{" "}
         <Link to="/login">Se connecter</Link>
       </p>
 

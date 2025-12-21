@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { Navigate, useNavigate, Link } from "react-router-dom";
+import './login.css';
 
 export default function Login() {
   const { user, loading, login } = useAuth();

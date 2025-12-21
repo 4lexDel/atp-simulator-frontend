@@ -1,0 +1,9 @@
+header {
+    justify-self: flex-start;
+}
+
+img {
+    margin: 10px;
+    height: 60px;
+    width: auto;
+}
