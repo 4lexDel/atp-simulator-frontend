@@ -31,8 +31,15 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  margin: 20px 0px;
+  font-size: 2.5em;
   line-height: 1.1;
+  text-align: center;
+  color: #016dad;
+}
+
+label {
+  font-weight: 500;
 }
 
 form {
@@ -62,7 +69,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input {
+input, select {
+  width: min(100%, 200px);
   font: inherit;
   padding: 0.3em 0.5em;
   border-radius: 8px;

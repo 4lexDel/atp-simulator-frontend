@@ -1,0 +1,17 @@
+.surfaces-skill {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.surfaces-skill div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.surfaces-skill input {
+    width: 60px;
+    text-align: center;
+}

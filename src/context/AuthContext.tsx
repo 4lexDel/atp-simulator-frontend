@@ -5,6 +5,7 @@ import { api } from "../api/axios";
 type User = {
     id: number;
     name: string;
+    player_id: number | null;
 };
 
 type AuthContextType = {
@@ -22,27 +23,29 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
 
+    const moduleBaseUrl = 'auth';
+
     // Vérifie la session au chargement
     useEffect(() => {
-        api.get<User>("/me")
+        api.get<User>(`/${moduleBaseUrl}/me`)
             .then(res => setUser(res.data))
             .catch(() => setUser(null))
             .finally(() => setLoading(false));
     }, []);
 
     const login = async (name: string, password: string) => {
-        await api.post("/login", { name, password });
-        const me = await api.get<User>("/me");
+        await api.post(`/${moduleBaseUrl}/login`, { name, password });
+        const me = await api.get<User>(`/${moduleBaseUrl}/me`);
         setUser(me.data);
     };
 
     const logout = async () => {
-        await api.post("/logout");
+        await api.post(`/${moduleBaseUrl}/logout`);
         setUser(null);
     };
 
     const register = async (name: string, password: string) => {
-        await api.post("/register", { name, password });
+        await api.post(`/${moduleBaseUrl}/register`, { name, password });
         await login(name, password); // auto-login après register
     };
 

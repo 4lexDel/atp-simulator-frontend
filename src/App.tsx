@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import { AuthProvider } from "./context/AuthContext";
 import Home from "./pages/Home";
 import Header from "./components/Header";
+import CreatePlayer from "./pages/CreatePlayer";
 
 export default function App() {
   return (
@@ -16,6 +17,14 @@ export default function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route
+              path="/players/new"
+              element={
+                <ProtectedRoute>
+                  <CreatePlayer />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/"
               element={
