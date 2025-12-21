@@ -10,38 +10,36 @@ import CreatePlayer from "./pages/CreatePlayer";
 
 export default function App() {
   return (
-    <>
+    <AuthProvider>
       <Header />
-      <AuthProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/players/new"
-              element={
-                <ProtectedRoute>
-                  <CreatePlayer />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/*"
-              element={
-                <Navigate to="/" replace />
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      </AuthProvider>
-    </>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/players/new"
+            element={
+              <ProtectedRoute>
+                <CreatePlayer />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/*"
+            element={
+              <Navigate to="/" replace />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }

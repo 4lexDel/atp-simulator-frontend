@@ -1,5 +1,4 @@
 import { Navigate } from "react-router-dom";
-import LogoutButton from "../components/LogoutButton";
 import { useAuth } from "../context/AuthContext";
 
 export default function Home() {
@@ -11,8 +10,9 @@ export default function Home() {
 
   return (
     <>
-      <h1>Page privée</h1>
-      <LogoutButton />
+      <h1>Home page</h1>
+
+      <p>Bienvenue, {user?.name} !</p>
     </>
   );
 }

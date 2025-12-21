@@ -1,9 +1,23 @@
 header {
-    justify-self: flex-start;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
 }
 
 img {
     margin: 10px;
     height: 60px;
     width: auto;
+}
+
+.exit-icon {
+    height: 30px;
+    margin-right: 10px;
+    width: auto;
+    cursor: pointer;
+}
+
+.exit-icon:hover {
+    color: #016dad;
 }
